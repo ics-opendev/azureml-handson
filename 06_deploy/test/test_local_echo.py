@@ -13,8 +13,8 @@ scoring_uri = service.scoring_uri
 
 headers = {"Content-Type": "application/json"}
 data = {
-    "query": "Query テスト",
-    "context": "Context テスト",
+    "query": "Query",
+    "context": "Context",
 }
 data = json.dumps(data)
 response = requests.post(uri, data=data, headers=headers)

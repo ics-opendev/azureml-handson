@@ -14,9 +14,12 @@ classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'hors
 
 def init():
     global model
-    # モデルの読み込み
+    # ネットワークの読み込み
     model = Net()
-    model.load_state_dict(torch.load(os.path.join(os.getenv("AZUREML_MODEL_DIR"), "model.pth"))) # モデルの読み込み
+    # 学習済みモデルのパスを取得
+    model_path = os.path.join(os.getenv("AZUREML_MODEL_DIR"), "model.pth")
+    # 読み込み
+    model.load_state_dict(torch.load(model_path))
 
 @rawhttp
 def run(request):

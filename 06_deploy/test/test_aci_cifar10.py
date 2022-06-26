@@ -19,7 +19,7 @@ key, _ = service.get_keys()
 headers = {"Authorization": f"Bearer {key}"}
 
 # 画像を添付
-files = {'image': open('./testdata_cifar10/1/32.jpg', 'rb').read()}
+files = {'image': open('../testdata_cifar10/automobile/32.jpg', 'rb').read()}
 
 # リクエストを実行
 response = requests.post(scoring_uri, files=files, headers=headers)
