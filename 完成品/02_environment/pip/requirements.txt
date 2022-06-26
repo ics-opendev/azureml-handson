@@ -1,0 +1,9 @@
+torch==1.10.1
+
+# Azure ML の各パッケージの詳細についてはこちらのURLを参考にしてください
+# https://docs.microsoft.com/ja-jp/python/api/overview/azure/ml/install?view=azure-ml-py
+
+azureml-sdk==1.42.0
+azureml-dataprep==4.0.4
+torchvision==0.11.2
+pandas==1.4.3
