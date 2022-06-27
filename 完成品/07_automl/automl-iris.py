@@ -13,15 +13,14 @@ dataset = Dataset.get_by_name(workspace, 'iris')
 
 # Auto MLの実行内容を定義
 automl_classifier_config = AutoMLConfig(task='classification',
-                                compute_target='cluster-takahashi001',
+                                compute_target='cluster-takahashi-handson',
                                 training_data=dataset,
                                 validation_size=0.2,
                                 label_column_name='variety',
                                 primary_metric='accuracy',
                                 enable_early_stopping=True,
                                 experiment_timeout_hours=0.25,
-                                verbosity=logging.INFO,
-                                **classification_settings)
+                                verbosity=logging.INFO)
 
 # 実験をワークスペースへ登録
 experiment = Experiment(workspace=workspace, name='automl-iris')
