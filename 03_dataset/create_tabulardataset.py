@@ -4,6 +4,9 @@ from azureml.data.datapath import DataPath
 # ワークスペースの取得
 workspace = Workspace.from_config()
 
+# 保存先のデータストアを取得（今回は既定）
+datastore = workspace.get_default_datastore()
+
 # データストアへ保存
 dataset = Dataset.File.upload_directory(
     src_dir='csv',
