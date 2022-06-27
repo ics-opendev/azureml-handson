@@ -1,1 +1,0 @@
-FROM mcr.microsoft.com/azureml/pytorch-1.10-ubuntu18.04-py37-cpu-inference:20220516.v3

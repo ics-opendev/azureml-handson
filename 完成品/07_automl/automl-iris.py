@@ -11,7 +11,7 @@ dataset = Dataset.get_by_name(workspace, 'iris')
 # 分割内容を固定化したい場合はこちら
 # training_data, validation_data = dataset.random_split(percentage=0.8, seed=1)
 
-# Auto ML の設定 ※慣例として項目を分ける
+# Auto ML の設定
 classification_settings = {
     'primary_metric': 'accuracy',
     'enable_early_stopping': True,

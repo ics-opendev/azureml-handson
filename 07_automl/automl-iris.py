@@ -11,22 +11,6 @@ dataset = Dataset.get_by_name(workspace, 'iris')
 # 分割内容を固定化したい場合はこちら
 # training_data, validation_data = dataset.random_split(percentage=0.8, seed=1)
 
-# Auto ML の設定 ※慣例として項目を分ける
-classification_settings = {
-    'primary_metric': 'accuracy',
-    'enable_early_stopping': True,
-    'experiment_timeout_hours': 0.25,
-    'verbosity': logging.INFO,
-}
-
-# Auto MLの実行内容を定義
-automl_classifier_config=AutoMLConfig(task='classification',
-                                compute_target='cluster-takahashi001',
-                                training_data=dataset,
-                                validation_size=0.2,
-                                label_column_name='variety',
-                                **classification_settings)
-
 # 実験をワークスペースへ登録
 experiment = Experiment(workspace=workspace, name='automl-iris')
 
