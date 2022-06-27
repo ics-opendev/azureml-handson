@@ -20,14 +20,12 @@ inference_config = InferenceConfig(
 # デプロイ条件を指定
 deployment_config = LocalWebservice.deploy_configuration(port=6789)
 
-# モデルの取得
-model = Model(workspace, name="handson-model")
 
 # デプロイの実施
 service = Model.deploy(
     workspace,
     "handson-local-webservice",
-    [model],
+    [],
     inference_config,
     deployment_config,
     overwrite=True,
