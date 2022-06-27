@@ -10,3 +10,10 @@ experiment = Experiment(workspace=workspace, name='pytorch')
 run = Run(experiment, '')
 
 # モデル登録
+run.register_model(
+    model_name='handson-model',
+    model_path='outputs/model.pth',
+    model_framework='Custom',
+    model_framework_version='1',
+    description='handson model'
+)

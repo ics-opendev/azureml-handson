@@ -13,7 +13,6 @@ env = Environment.get(workspace, 'handson-env')
 experiment = Experiment(workspace=workspace, name='dataset')
 
 # FileDatasetを取得
-cifar10 = Dataset.get_by_name(workspace, name='cifar10', version='latest')
 
 # トレーニングスクリプトを実行構成を定義
 config = ScriptRunConfig(

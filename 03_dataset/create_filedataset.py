@@ -11,3 +11,21 @@ trainset = torchvision.datasets.CIFAR10(
     download=True,
     transform=torchvision.transforms.ToTensor()
 )
+
+# 保存先のデータストアを取得（今回は既定）
+
+# 保存先のパスを生成
+
+# データストアへ保存 
+file_data = Dataset.File.upload_directory(
+    src_dir='cifar10',
+    target=save_path
+)
+
+# ワークスペースのデータセットに登録
+file_data.register(
+    workspace=workspace,
+    name='cifar10',
+    description='cifar10 training data',
+    create_new_version=True
+)
