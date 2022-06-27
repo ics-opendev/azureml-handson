@@ -2,18 +2,18 @@ from azureml.core import Workspace
 from azureml.core import Environment
 from azureml.core.conda_dependencies import CondaDependencies
 
-# ŠÂ‹«‚Ìì¬
+# ç’°å¢ƒã®ä½œæˆ
 handson_env = Environment(name="handson-env")
 
-# pip‚©‚çŠÂ‹«‚ğì¬
+# pipã‹ã‚‰ç’°å¢ƒã‚’ä½œæˆ
 conda_dependencies = CondaDependencies()
 conda_dependencies.add_pip_package("torch==1.10.1")
 
-# conda dependencies‚ğİ’è
+# conda dependenciesã‚’è¨­å®š
 handson_env.python.conda_dependencies = conda_dependencies
 
-# ƒ[ƒNƒXƒy[ƒX‚ğæ“¾
+# ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã‚’å–å¾—
 workspace = Workspace.from_config()
 
-# ŠÂ‹«‚ğƒ[ƒNƒXƒy[ƒX‚É“o˜^
+# ç’°å¢ƒã‚’ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã«ç™»éŒ²
 handson_env.register(workspace)
