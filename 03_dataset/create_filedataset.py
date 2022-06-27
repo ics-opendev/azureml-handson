@@ -12,6 +12,9 @@ trainset = torchvision.datasets.CIFAR10(
     transform=torchvision.transforms.ToTensor()
 )
 
+# ワークスペースを取得
+workspace = Workspace.from_config()
+
 # 保存先のデータストアを取得（今回は既定）
 
 # 保存先のパスを生成

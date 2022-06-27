@@ -4,26 +4,26 @@ from azureml.core.model import Model
 from azureml.core.model import InferenceConfig
 from azureml.core.webservice import LocalWebservice
 
-# ƒ[ƒNƒXƒy[ƒX‚ğæ“¾
+# ãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã‚’å–å¾—
 workspace = Workspace.from_config()
 
-# ƒfƒvƒƒCŠÂ‹«‚Ìw’è
+# ãƒ‡ãƒ—ãƒ­ã‚¤ç’°å¢ƒã®æŒ‡å®š
 env = Environment.get(workspace, name="handson-webserver-env")
 
-# „˜_\¬‚ğ’è‹`
+# æ¨è«–æ§‹æˆã‚’å®šç¾©
 inference_config = InferenceConfig(
     environment=env,
     source_directory="",
     entry_script="",
 )
 
-# ƒfƒvƒƒCğŒ‚ğw’è
+# ãƒ‡ãƒ—ãƒ­ã‚¤æ¡ä»¶ã‚’æŒ‡å®š
 deployment_config = LocalWebservice.deploy_configuration(port=6789)
 
-# ƒ‚ƒfƒ‹‚Ìæ“¾
+# ãƒ¢ãƒ‡ãƒ«ã®å–å¾—
 model = Model(workspace, name="handson-model")
 
-# ƒfƒvƒƒC‚ÌÀ{
+# ãƒ‡ãƒ—ãƒ­ã‚¤ã®å®Ÿæ–½
 service = Model.deploy(
     workspace,
     "handson-local-webservice",

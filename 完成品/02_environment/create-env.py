@@ -22,3 +22,6 @@ workspace = Workspace.from_config()
 
 # 環境をワークスペースに登録
 handson_env.register(workspace)
+
+# 環境を事前にビルド
+# handson_env.build(workspace)

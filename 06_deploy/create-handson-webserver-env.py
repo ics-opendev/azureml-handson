@@ -5,9 +5,9 @@ from azureml.core import Environment
 pip_env = Environment.from_pip_requirements('handson-webserver-env', 'pip/requirements.txt', pip_version=None)
 
 # ワークスペースを取得
-ws = Workspace.from_config()
+workspace = Workspace.from_config()
 # 環境をワークスペースに登録
-pip_env.register(ws)
+pip_env.register(workspace)
 
 # 初回のbuildを事前しておいてWebサーバの起動を高速化
-pip_env.build()
+pip_env.build(workspace)

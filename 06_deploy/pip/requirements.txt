@@ -1,11 +1,11 @@
-# Web�T�[�o�ɕK�{
+# Webサーバに必須
 azureml-sdk==1.42.0
 azureml-defaults
 
-# ����HTTP���N�G�X�g���擾����̂ɕK�v
+# 生のHTTPリクエストを取得するのに必要
 azureml-contrib-services
 
-# ���f���𓮍삳����̂ɕK�{
+# モデルを動作させるのに必須
 Pillow
 torch==1.10.1
 torchvision==0.11.2

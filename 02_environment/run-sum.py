@@ -14,7 +14,7 @@ experiment = Experiment(workspace=workspace, name='sum')
 config = ScriptRunConfig(
     source_directory='src',
     script='sum.py',
-    compute_target=compute
+    compute_target=compute,
 )
 
 # 実験を実行する
