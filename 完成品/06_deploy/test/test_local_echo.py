@@ -1,7 +1,7 @@
 import requests
 import json
 from azureml.core import Workspace
-from azureml.core import LocalWebservice
+from azureml.core.webservice import LocalWebservice
 
 # ワークスペースを取得
 ws = Workspace.from_config()
@@ -17,5 +17,5 @@ data = {
     "context": "Context",
 }
 data = json.dumps(data)
-response = requests.post(uri, data=data, headers=headers)
+response = requests.post(scoring_uri, data=data, headers=headers)
 print(response.json())
